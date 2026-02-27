@@ -7,9 +7,8 @@ import 'core/theme.dart';
 import 'core/routes.dart';
 import 'services/firebase_service.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(const DotlyApp());
 }
 
@@ -23,7 +22,15 @@ class DotlyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: DotlyTheme.theme,
       onGenerateRoute: AppRoutes.onGenerateRoute,
-      home: const AppGate(),
+      home: FutureBuilder(
+        future: Firebase.initializeApp(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return const AppGate();
+          }
+          return const SplashPage();
+        },
+      ),
     );
   }
 }
