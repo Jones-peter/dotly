@@ -97,3 +97,4 @@ linux/flutter/ephemeral/
 lib/firebase_options.dart
 lib/services/firebase_service.dart
 firebase.json
+android/app/src/main/google-services.json

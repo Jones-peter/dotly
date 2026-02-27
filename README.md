@@ -1,6 +1,12 @@
 # dotly
 
-A new Flutter project.
+Dotly is a Flutter application designed to bridge the gap between Braille and standard text. It allows users to scan physical Braille using their device's camera and translate it into readable text.
+
+## Features
+
+*   **Braille Scanner:** Scan images of Braille to translate them into English text.
+*   **Text-to-Speech:** Listen to the translated text using the integrated speech feature.
+*   **Learn Braille:** Access resources and tools to learn Braille characters and rules.
 
 ## Getting Started
 

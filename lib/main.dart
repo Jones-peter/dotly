@@ -3,14 +3,13 @@ import 'package:dotly/pages/maintenance_page.dart';
 import 'package:dotly/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'core/theme.dart';
 import 'core/routes.dart';
 import 'services/firebase_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp();
   runApp(const DotlyApp());
 }
 
